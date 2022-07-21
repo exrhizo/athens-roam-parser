@@ -2,7 +2,7 @@
 
 These network note tools use a markdown like grammar, with additional rules.
 
-Here, we extract out Athen's parser to be able to use the grammars as a library!
+Here, we extract out [Athens](https://github.com/athensresearch/athens)'s [parser](https://github.com/athensresearch/athens/blob/main/src/cljc/athens/parser.cljc) to be able to use the grammars as a library!
 
 
 ## Development
