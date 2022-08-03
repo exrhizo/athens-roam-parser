@@ -9,16 +9,18 @@ Here, we extract out [Athens](https://github.com/athensresearch/athens)'s [parse
 
 Installation on Mac
 
- - Get Java JDK 8
+ - Get Java JDK 11
  - `brew install clojure/tools/clojure`
- - `brew install leiningen`
 
-Compilation
+Compilation during development
 
- - `lein cljsbuild once`
- - `lein lein minify-assets`
+ - `npx cljsbuild watch athens`
 
-This creates `dist/parser.min.js` with a size of 1.5MB... hm.. this is quite large if it is to be included in a Roam Depot style extension.
+Production
+
+ - `npx shadow-cljs release athens`
+
+This creates `dist/index.js` with a size of 312K... hm.. this is large if it is to be included in a Roam Depot style extension? better than when using `lein cljsbuild`.
 
 __Anyone know how to make this smaller?__
 

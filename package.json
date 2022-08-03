@@ -2,5 +2,8 @@
   "name": "athens-roam-parser",
   "version": "2.0.0-beta.3",
   "description": "Fork to use athens parser as standalone lib.",
-  "main": "dist/parser.js"
+  "main": "dist/index.js",
+  "devDependencies": {
+    "shadow-cljs": "2.19.8"
+  }
 }

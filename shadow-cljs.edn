@@ -1,0 +1,21 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[org.clojure/clojure "1.10.3"]
+  [org.clojure/clojurescript "1.10.879"]
+  [instaparse/instaparse "1.4.10"]]
+
+ :builds
+ { 
+  ;; backend for electron (node.js)
+  :athens {:target           :node-library
+           :output-to        "dist/index.js"
+           :output-dir       "dist"
+        ;;    :entries [athens.parser]
+           :exports-var      athens.parser/parser
+        ;;    :js-options       {:babel-preset-config {:targets {:chrome 80}}}
+        ;;    :compiler-options {:output-feature-set :es-next}
+           }}}
+  

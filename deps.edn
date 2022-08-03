@@ -1,6 +1,0 @@
-{:paths ["src"] 
- :deps 
- {org.clojure/clojure                   #:mvn{:version "1.10.3"}
-  org.clojure/clojurescript             #:mvn{:version "1.10.879"}
-  instaparse/instaparse                 #:mvn{:version "1.4.10"}} 
- }
