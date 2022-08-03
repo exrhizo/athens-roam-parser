@@ -7,7 +7,9 @@
   :plugins [[lein-cljsbuild "1.1.8"], [lein-asset-minifier "0.4.6"]]
   :cljsbuild {:builds [{:source-paths ["src"]
                         :compiler {:output-to "dist/parser.js"
-                                   :optimizations :whitespace
-                                   :pretty-print true}}]}
+                                   :target :nodejs
+                                   :optimizations :simple
+                                   :pretty-print true
+                                   :parallel-build true}}]}
   :minify-assets [[:js {:source ["dist/parser.js"]
                         :target "dist/parser.min.js"}]])

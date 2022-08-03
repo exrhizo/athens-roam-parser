@@ -18,7 +18,7 @@ Compilation
  - `lein cljsbuild once`
  - `lein lein minify-assets`
 
-This creates `dist/parser.min.js` with a size of 2MB... hm.. this is quite large if it is to be included in a Roam Depot style extension.
+This creates `dist/parser.min.js` with a size of 1.5MB... hm.. this is quite large if it is to be included in a Roam Depot style extension.
 
 __Anyone know how to make this smaller?__
 
