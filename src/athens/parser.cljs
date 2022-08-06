@@ -7,27 +7,13 @@
 (defn parse-to-ast
   "Converts a string of block syntax to an abstract syntax tree for Athens Flavoured Markdown."
   [string]
-  (impl/staged-parser->ast string))
+  (clj->js(impl/staged-parser->ast string)))
 
-;; Exported as athens.parser.structure-parse-to-ast
+;; Exported as athens.parser.parse
 (defn structure-parse-to-ast
   "Converts a string to structure elements in it, AST of course."
   [string]
-  (structure/structure-parser->ast string))
+  (clj->js (structure/structure-parser->ast string)))
 
-(defn make-js-map
-  "makes a javascript map from a clojure one"
-  [cljmap]
-  (let [out (js-obj)]
-    (doall (map #(aset out (name (first %)) (second %)) cljmap))
-    out))
-
-;; Exported as athens.parser.parse
-(defn parse
-  "Converts a string to structure elements in it, AST of course."
-  [string]
-  (make-js-map (structure/structure-parser->ast string)))
-
-(def parser #js {:parse            parse
-                  :parseToAst       parse-to-ast
+(def parser #js { :parseToAst       parse-to-ast
                   :parseToStructure structure-parse-to-ast})
