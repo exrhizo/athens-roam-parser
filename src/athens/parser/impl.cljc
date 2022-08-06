@@ -5,6 +5,7 @@
   2nd pass: inline structure
   3rd pass: raw urls"
   (:require
+   ["perf_hooks$performance" :as performance]
    [athens.common.logging :as log]
    #?(:cljs [athens.config :as config])
    [clojure.string :as string]
@@ -457,9 +458,9 @@ newline = #'\\n'
   [name fn-to-time]
   (fn [arg]
     #?(:cljs
-       (let [t-0 (js/performance.now)
+       (let [t-0 (performance/now)
              result (fn-to-time arg)
-             t-1 (js/performance.now)]
+             t-1 (performance/now)]
          (when config/measure-parser?
            (log/info name ", time:" (- t-1 t-0)))
          result)
